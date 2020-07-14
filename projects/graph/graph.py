@@ -100,9 +100,10 @@ class Graph:
                     return current_path
                 visited.add(last_vertex)
                 for v in self.get_neighbors(last_vertex):
-                    new_path = [*current_path]
+                    new_path = list(current_path)
                     new_path.append(v)
                     q.enqueue(new_path)
+        return None
 
     def dfs(self, starting_vertex, destination_vertex):
         """
