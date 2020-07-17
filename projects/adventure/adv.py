@@ -31,10 +31,8 @@ directions = {'n':'s', 's':'n', 'e':'w', 'w':'e'}
 path = []
 explored = {}
 
-# explored[0] = player.current_room.get_exits()
 # Add first room at 0 index of explored and attach the available exits
 explored[player.current_room.id] = player.current_room.get_exits()
-print(explored)
 # Go to each room and through each exit, remove each visited exit until none are left. When dead end is reached, go back
 while len(explored) < len(room_graph) - 1:
     # if ID of current room not in explored
