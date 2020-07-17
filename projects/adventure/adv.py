@@ -3,7 +3,7 @@ from player import Player
 from world import World
 import random
 from ast import literal_eval
-
+from datetime import datetime
 # Load world
 world = World()
 
@@ -64,6 +64,7 @@ while len(explored) < len(room_graph) - 1:
 
 
 # TRAVERSAL TEST
+start_time = datetime.now()
 visited_rooms = set()
 player.current_room = world.starting_room
 visited_rooms.add(player.current_room)
@@ -79,7 +80,8 @@ if len(visited_rooms) == len(room_graph):
 else:
     print("TESTS FAILED: INCOMPLETE TRAVERSAL")
     print(f"{len(room_graph) - len(visited_rooms)} unvisited rooms")
-
+end_time = datetime.now()
+print(f'Finished this fucker in {end_time - start_time} seconds')
 
 #######
 # UNCOMMENT TO WALK AROUND
